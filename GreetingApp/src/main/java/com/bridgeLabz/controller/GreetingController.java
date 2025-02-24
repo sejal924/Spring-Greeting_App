@@ -1,11 +1,15 @@
 package com.bridgeLabz.controller;
 
+import com.bridgeLabz.service.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class GreetingController {
 
-    private final String message="Hello from bridgeLabz";
+    @Autowired
+    private GreetingService greetingService;
+
     @GetMapping("/greeting")
     public String getGreeting(){
         return "GET : " + message ;
