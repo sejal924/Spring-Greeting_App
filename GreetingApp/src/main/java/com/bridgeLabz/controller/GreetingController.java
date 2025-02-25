@@ -30,4 +30,10 @@ public class GreetingController {
         return "DELETE : " + greetingService.getGreeting();
     }
 
+    //UseCase: 3
+    @GetMapping("/greeting/params")
+    public String getGreetingParams(@RequestParam(value = "firstName",required = false) String firstName,
+                                    @RequestParam(value = "lastName",required = false) String lastName){
+        return greetingService.displayingGreeting(firstName,lastName);
+    }
 }
